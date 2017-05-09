@@ -1,0 +1,29 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontSize": 12,
+    "editor.fontFamily": "'Liberation Mono', monospace",
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.tabCompletion": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.rulers": [
+        80
+    ],
+    "editor.minimap.enabled": true,
+    "editor.cursorBlinking": "phase",
+    "editor.mouseWheelZoom": true,
+    "editor.cursorStyle": "line",
+    "editor.fontLigatures": true,
+    "editor.renderIndentGuides": true,
+    "workbench.editor.tabCloseButton": "off",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.iconTheme": "vs-seti",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+}
