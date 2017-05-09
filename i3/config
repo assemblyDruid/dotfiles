@@ -13,7 +13,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
+# menu
 bindsym $mod+d exec dmenu_run
 
 # change focus
@@ -145,28 +145,57 @@ bindsym $mod+r mode "resize"
 # [color class] [border] [background] [text] [indicator] [child_border]
 
 # COLOR CLASSES:
-# clinet.focused            has the present focus
-# clinet.focused_inactive   has containter focus, but not present focus
-# clinet.unfocused          no containter or present focus
-# clinet.urgent             notifications
-# clinet.placeholder        defaults to background/text colors
+# client.focused            has the present focus
+# client.focused_inactive   has containter focus, but not present focus
+# client.unfocused          no containter or present focus
+# client.urgent             notifications
+# client.placeholder        defaults to background/text colors
 # client.background         background of client window
 
+set $bg                 #2f343f
+set $bg-i               #21252d
+set $text               #f3f4f5
+set $text-inactive      #676E7d
+set $text-focus         #ffffff
+set $urgent             #df5f38
+set $indicator          #00ffaa
 
+#                       [border]  [bkgrnd] [text]          [indicator]
+client.focused          $bg       $bg      $text-focus     $indicator
+client.focused_inactive $bg-i     $bg-i    $text-inactive  $indicator
+client.urgent           $urgent   $urgent  $text           $indicator
+client.background       $bg       $bg      $text           $indicator
+client.unfocused        $bg-i     $bg-i    $text-inactive  $indicator
+
+#
+# Edge Borders
+#
+
+hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3blocks
+
+        colors {
+                background $bg
+#                                  [border] [bkgrnd] [text]         [indicator]
+                focused_workspace  $bg      $bg      $text-focus    $indicator
+                active_workspace   $bg      $bg      $text          $indicator
+                inactive_workspace $bg      $bg      $text-inactive $indicator
+                urgent_workspace   $urgent  $urgent  $text          $indicator
+        }
 }
 
 # i3lock
-bindsym $mod+x exec i3lock
+bindsym $mod+x exec i3lock --color "$bg" -e -f
 
 
 # single-fire executables
 exec firefox
 exec gnome-terminal
+exec compton -f -I 0.33
 
 # constant-fire executables
 exec_always feh --bg-scale /home/cfarvin/Pictures/mr.jpg
@@ -174,5 +203,6 @@ exec_always feh --bg-scale /home/cfarvin/Pictures/mr.jpg
 # Notes ------------------------------------------------------------------------
 # Used 'lxappearance' to reapply arc themes
 # Google Font: Quicksand
-# Use 'xprop' | grep "CLASS" to find class names of apps
-# Use 'feh' to autoset background with exec call above
+# Used 'xprop' | grep "CLASS" to find class names of apps
+# Used 'feh' to autoset background with exec call above
+# Used 'compton' for transparency
