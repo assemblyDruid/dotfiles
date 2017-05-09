@@ -5,7 +5,6 @@
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80,
-    "editor.tabCompletion": true,
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,
