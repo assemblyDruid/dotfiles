@@ -121,6 +121,8 @@ fi
 alias ls="ls -lh --group-directories-first --color"
 alias vsc="code"
 alias slt="subl"
+alias cal="ncal -w3"
+alias ncal="ncal -w3"
 
 # cfarvin - custom path modifications
 export PATH=$PATH:/usr/share/code
