@@ -91,7 +91,7 @@ assign [class="Gnome-terminal"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="Code"] $ws3
 assign [class="Sublime_text"] $ws3
-assign [class="VirtualBox"] $ws4S
+assign [class="VirtualBox"] $ws4
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -196,7 +196,7 @@ bindsym $mod+x exec i3lock --color "$bg" -e -f
 # single-fire executables
 exec firefox
 exec gnome-terminal
-exec compton -f -I 0.29
+exec compton -f -I 0.33
 
 # constant-fire executables
 exec_always feh --bg-scale /home/cfarvin/Pictures/mr.jpg
