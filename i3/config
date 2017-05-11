@@ -63,11 +63,14 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# move to right/left monitor
+bindsym $mod+Alt+left move workspace to output left
+bindsym $mod+Alt+right move workspace to output right
+
 # focus the child container
 #bindsym $mod+d focus child
 
 # use 'xprop' command to find class
-
 set $ws1 ""
 set $ws2 ""
 set $ws3 ""
@@ -91,7 +94,7 @@ assign [class="Gnome-terminal"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="Code"] $ws3
 assign [class="Sublime_text"] $ws3
-assing [class="libreoffice-startcenter"] $ws3
+assign [class="libreoffice-startcenter"] $ws3
 assign [class="VirtualBox"] $ws4
 
 # move focused container to workspace
