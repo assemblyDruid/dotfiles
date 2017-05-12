@@ -63,9 +63,11 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# TODO (cfarvin): this isn't working, fix
+# use command 'xrandr' to list screens
 # move to right/left monitor
-bindsym $mod+Alt+left move workspace to output left
-bindsym $mod+Alt+right move workspace to output right
+#bindsym $mod+Alt+Left move workspace to output DVI-0
+#bindsym $mod+Alt+Right move workspace to output DVI-1
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -96,6 +98,12 @@ assign [class="Code"] $ws3
 assign [class="Sublime_text"] $ws3
 assign [class="libreoffice-startcenter"] $ws3
 assign [class="VirtualBox"] $ws4
+
+# workspace monitor assignments
+workspace $ws1 output DVI-0
+workspace $ws2 output DVI-0
+workspace $ws3 output DVI-1
+workspace $ws4 output DVI-1
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
