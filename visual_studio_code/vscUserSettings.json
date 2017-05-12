@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.fontSize": 12,
-    "editor.fontFamily": "'Liberation Mono', monospace",
+    "editor.fontFamily": "'Liberation Mono', 'Consolas', monospace",
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80,
@@ -24,5 +24,12 @@
     "workbench.iconTheme": "vs-seti",
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
+    "[cpp]": {
+        "editor.quickSuggestions": true
+    },
+    "[c]": {
+        "editor.quickSuggestions": true
+    },
+    "window.zoomLevel": 0
 
 }
