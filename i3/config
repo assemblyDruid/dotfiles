@@ -213,7 +213,8 @@ exec compton -f -I 0.33
 
 # constant-fire executables
 #exec_always feh --bg-scale /home/cfarvin/Pictures/mr.jpg # office workstation
-exec_always feh --bg-scale /home/cameron/Pictures/uss-enterprise.jpg # home ws
+exec_always feh --bg-fill /home/cameron/Pictures/uss-enterprise.jpg # home ws
+exec_always /home/cameron/.screenlayout/homews.sh
 
 # Multimedia keys and volume ---------------------------------------------------
 # Source: https://faq.i3wm.org/question/3747/enabling-multimedia-keys.1.html
@@ -228,7 +229,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec touchpad.sh # toggle touchpad
+bindsym XF86TouchpadToggle exec toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
