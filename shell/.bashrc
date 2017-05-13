@@ -130,3 +130,6 @@ alias umountws="sudo umount /dev/sda1"
 export PATH=$PATH:/usr/bin/code # home workstation
 # export PATH=$PATH:/share/bin/code # office workstation
 export PATH=$PATH:/home/cameron/applications/tor-browser_en-US/Browser/
+
+# home workstation only | path to touchpad.sh | requires synclient
+export PATH=$PATH:/home/cameron/.config/touchpad/
