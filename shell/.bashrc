@@ -124,6 +124,7 @@ alias cal="ncal -w3"
 alias ncal="ncal -w3"
 alias tb="start-tor-browser"
 alias mountws="sudo mount -w /dev/sda1 /home/cameron/workspace/"
+alias umountws="sudo umount /dev/sda1"
 
 # cfarvin - custom path modifications
 export PATH=$PATH:/usr/bin/code # home workstation
