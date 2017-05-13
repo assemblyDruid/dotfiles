@@ -116,13 +116,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 # cfarvin - custom aliases
 alias ls="ls -lh --group-directories-first --color"
 alias vsc="code"
 alias slt="subl"
 alias cal="ncal -w3"
 alias ncal="ncal -w3"
+alias tb="start-tor-browser"
+alias mountws="sudo mount -w /dev/sda1 /home/cameron/workspace/"
 
 # cfarvin - custom path modifications
-export PATH=$PATH:/usr/share/code
+export PATH=$PATH:/usr/bin/code # home workstation
+# export PATH=$PATH:/share/bin/code # office workstation
+export PATH=$PATH:/home/cameron/applications/tor-browser_en-US/Browser/

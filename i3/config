@@ -77,7 +77,7 @@ set $ws1 ""
 set $ws2 ""
 set $ws3 ""
 set $ws4 "{  }"
-set $ws5 "MISC"
+set $ws5 ""
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -98,6 +98,7 @@ assign [class="Code"] $ws3
 assign [class="Sublime_text"] $ws3
 assign [class="libreoffice-startcenter"] $ws3
 assign [class="VirtualBox"] $ws4
+assign [class="Steam"] $ws5
 
 # workspace monitor assignments
 workspace $ws1 output DVI-0
@@ -211,7 +212,8 @@ exec gnome-terminal
 exec compton -f -I 0.33
 
 # constant-fire executables
-exec_always feh --bg-scale /home/cfarvin/Pictures/mr.jpg
+#exec_always feh --bg-scale /home/cfarvin/Pictures/mr.jpg # office workstation
+exec_always feh --bg-scale /home/cameron/Pictures/uss-enterprise.jpg # home ws
 
 # Multimedia keys and volume ---------------------------------------------------
 # Source: https://faq.i3wm.org/question/3747/enabling-multimedia-keys.1.html
@@ -222,11 +224,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-# bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-# bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# Touchpad controls
-#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
