@@ -203,7 +203,7 @@ bar {
 }
 
 # i3lock
-bindsym $mod+x exec i3lock --color "$bg" -e -f
+bindsym $mod+x exec i3lock -ef -i ~/Pictures/uss-enterprise.png
 
 
 # single-fire executables
