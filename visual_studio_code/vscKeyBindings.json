@@ -135,5 +135,13 @@
         "key": "shift+home",
         "command": "-cursorHomeSelect",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "git.push"
+    },
+    {
+        "key": "ctrl+alt+m",
+        "command": "git.commit"
     }
 ]

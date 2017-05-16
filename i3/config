@@ -94,6 +94,7 @@ bindsym $mod+0 workspace 10
 # class|workspace assignments
 assign [class="Gnome-terminal"] $ws1
 assign [class="Firefox"] $ws2
+assign [class="Tor Browser"] $ws2
 assign [class="Code"] $ws3
 assign [class="Sublime_text"] $ws3
 assign [class="libreoffice-startcenter"] $ws3
