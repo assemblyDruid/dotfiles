@@ -1,6 +1,5 @@
-// Place your settings in this file to overwrite the default settings
 {
-    "editor.fontSize": 12,
+    "editor.fontSize": 14,
     "editor.fontFamily": "'Liberation Mono', 'Consolas', monospace",
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "wordWrapColumn",
@@ -20,16 +19,8 @@
     "editor.fontLigatures": true,
     "editor.renderIndentGuides": true,
     "workbench.editor.tabCloseButton": "off",
-    "workbench.colorTheme": "Default Dark+",
     "workbench.iconTheme": "vs-seti",
     "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "[cpp]": {
-        "editor.quickSuggestions": true
-    },
-    "[c]": {
-        "editor.quickSuggestions": true
-    },
-    "window.zoomLevel": 0
-
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Nord"
 }
