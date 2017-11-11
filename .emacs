@@ -30,6 +30,11 @@
      ("#F309DF" . 85)
      ("#424748" . 100))))
  '(hl-sexp-background-color "#1c1f26")
+ '(ido-mode nil nil (ido))
+ '(inhibit-startup-echo-area-message "")
+ '(inhibit-startup-screen t)
+ '(initial-buffer-choice t)
+ '(initial-scratch-message nil)
  '(magit-diff-use-overlays nil)
  '(menu-bar-mode nil)
  '(minibuffer-frame-alist (quote ((width . 80) (height . 2))))
@@ -45,6 +50,7 @@
     (spacegray-theme tango-2-theme tango-plus-theme tangotango-theme solarized-theme org ujelly-theme spacemacs-theme material-theme gotham-theme darktooth-theme darkroom darkokai-theme darkburn-theme)))
  '(pos-tip-background-color "#36473A")
  '(pos-tip-foreground-color "#FFFFC8")
+ '(ring-bell-function (quote ignore))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(vc-annotate-background nil)
@@ -69,6 +75,7 @@
      (340 . "#fff59d")
      (360 . "#8bc34a"))))
  '(vc-annotate-very-old-color nil)
+ '(visible-bell t)
  '(weechat-color-list
    (unspecified "#242728" "#424748" "#F70057" "#ff0066" "#86C30D" "#63de5d" "#BEB244" "#E6DB74" "#40CAE4" "#06d8ff" "#FF61FF" "#ff8eff" "#00b2ac" "#53f2dc" "#f8fbfc" "#ffffff")))
 (custom-set-faces
