@@ -62,13 +62,14 @@
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(org-agenda-files nil)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (on-screen smooth-scrolling smart-comment smart-cursor-color smart-tab kosmos-theme smart-indent-rigidly solarized-theme org spacemacs-theme gotham-theme)))
+    (color-theme-solarized on-screen smooth-scrolling smart-comment smart-cursor-color smart-tab kosmos-theme smart-indent-rigidly solarized-theme org spacemacs-theme gotham-theme)))
  '(pos-tip-background-color "#36473A")
  '(pos-tip-foreground-color "#FFFFC8")
  '(ring-bell-function (quote ignore))
@@ -121,9 +122,43 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "outline" :family "Hack"))))
+ '(custom-face-tag ((t (:foreground "#6c71c4" :weight normal :height 1.2 :family "Hack"))))
+ '(custom-group-tag ((t (:foreground "#268bd2" :height 1.2 :family "Hack"))))
+ '(custom-group-tag-1 ((t (:foreground "#dc322f" :height 1.2 :family "Hack"))))
+ '(custom-variable-tag ((t (:foreground "#2aa198" :height 1.2 :family "Hack"))))
+ '(org-level-1 ((t (:foreground "#cb4b16" :family "Hack"))))
+ '(org-level-2 ((t (:foreground "#859900" :height 1.2 :family "Hack"))))
+ '(org-level-3 ((t (:foreground "#268bd2" :height 1.15 :family "Hack~"))))
+ '(org-level-4 ((t (:foreground "#b58900" :height 1.1 :family "Hack"))))
+ '(org-level-5 ((t (:foreground "#2aa198" :family "Hack"))))
+ '(org-level-6 ((t (:foreground "#859900" :family "Hack"))))
+ '(org-level-7 ((t (:foreground "n#dc322f" :family "Hack"))))
+ '(org-level-8 ((t (:foreground "#268bd2" :family "Hack"))))
+ '(outline-1 ((t (:height 1.3 :family "Hack"))))
+ '(outline-2 ((t (:height 1.2 :family "Hack"))))
+ '(outline-3 ((t (:height 1.15 :family "Hack"))))
+ '(outline-4 ((t (:height 1.1 :family "Hack"))))
+ '(outline-5 ((t (:family "Hack"))))
+ '(outline-6 ((t (:family "Hack"))))
+ '(outline-7 ((t (:family "Hack"))))
+ '(outline-8 ((t (:family "Hack"))))
  '(scroll-bar ((t nil))))
 
+;;
+;;
+;; Default Font
+;;
+;;
+(add-to-list 'default-frame-alist '(font . "Hack-10"))
+(set-face-attribute 'default nil :font "Hack-10")
+(set-face-attribute 'fixed-pitch nil :font "Hack-10")
+(set-face-attribute 'variable-pitch nil :font "Hack-10")
 
+;;
+;;
+;; C-Mode Indentation
+;;
+;;
 (defun my-c-mode-common-hook ()
   (c-set-offset 'substatement-open 0)
 
@@ -135,5 +170,25 @@
   (setq tab-width 4)
   (setq indent-tabs-mode nil)  ; spaces == nil | t == tabs
   )
-
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+
+;;;; Or mode configuration
+;; Disable the splash screen (to enable it agin, replace the t with 0)
+(setq inhibit-splash-screen t)
+
+;; Enable transient mark mode
+(transient-mark-mode 1)
+
+;;
+;;
+;; Org mode configuration
+;;
+;;
+;; Enable Org mode
+(require 'org)
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(setq org-log-done 'time)
+(global-font-lock-mode 1)
