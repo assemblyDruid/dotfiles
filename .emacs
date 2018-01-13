@@ -17,14 +17,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
  '(custom-enabled-themes (quote (subatomic)))
  '(custom-safe-themes
    (quote
     ("b34636117b62837b3c0c149260dfebe12c5dad3d1177a758bb41c4b15259ed7e" default)))
+ '(global-linum-mode t)
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (subatomic-theme smart-tab smart-shift smart-semicolon smart-newline smart-cursor-color smart-comment smart-backspace)))
+    (rust-mode subatomic-theme smart-tab smart-shift smart-semicolon smart-newline smart-cursor-color smart-comment smart-backspace dash color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-theme)))
  '(ring-bell-function (quote ignore))
  '(tool-bar-mode nil))
 
