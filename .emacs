@@ -1,4 +1,4 @@
-
+(package-initialize)
 ;;
 ;;
 ;; MELPA Archives
@@ -30,6 +30,7 @@
  '(fci-rule-color "#373b41")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(global-linum-mode t)
+ '(indent-tabs-mode nil)
  '(make-backup-files t)
  '(menu-bar-mode nil)
  '(package-selected-packages
