@@ -1,4 +1,4 @@
-(package-initialize)
+ (package-initialize)
 ;;
 ;;
 ;; MELPA Archives
@@ -85,7 +85,7 @@
   (c-set-offset 'substatement-open 0)
 
   (setq c++-tab-always-indent t)
-  (setq c-basic-offset 2)                  ;; Default is 2
+  (setq c-basic-offset 4)                  ;; Default is 2
   (setq c-indent-level 4)                  ;; Default is 2
 
   (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
