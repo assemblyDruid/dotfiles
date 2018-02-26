@@ -1,26 +1,26 @@
 {
     "editor.fontSize": 14,
-    "editor.fontFamily": "'Liberation Mono', 'Consolas', monospace",
+    "editor.fontFamily": "'Hack', 'Liberation Mono', 'Consolas', monospace",
     "editor.renderWhitespace": "all",
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": false,
-        "strings": false
-    },
-    "editor.rulers": [
-        80
-    ],
-    "editor.minimap.enabled": true,
-    "editor.cursorBlinking": "phase",
-    "editor.mouseWheelZoom": true,
-    "editor.cursorStyle": "line",
-    "editor.fontLigatures": true,
+    "editor.wordWrap": "on",
+    "editor.rulers": [ 80  ],
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
     "editor.renderIndentGuides": true,
-    "workbench.editor.tabCloseButton": "off",
-    "workbench.iconTheme": "vs-seti",
+    "editor.find.autoFindInSelection": true,
+    "editor.find.seedSearchStringFromSelection": true,
+    "editor.formatOnPaste": true,
+    "editor.renderControlCharacters": true,
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.startupEditor": "none",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "Nord"
+    "files.autoSave": "onFocusChange",
+    "zenMode.restore": true,
+    "update.enableWindowsBackgroundUpdates": true,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "window.zoomLevel": -1
 }
