@@ -3,7 +3,9 @@
     "editor.fontFamily": "'Hack', 'Liberation Mono', 'Consolas', monospace",
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "on",
-    "editor.rulers": [ 80  ],
+    "editor.rulers": [
+        80
+    ],
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
     "editor.renderIndentGuides": true,
@@ -12,7 +14,7 @@
     "editor.formatOnPaste": true,
     "editor.renderControlCharacters": true,
     "explorer.confirmDelete": false,
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "Amber",
     "workbench.startupEditor": "none",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
@@ -21,6 +23,7 @@
     "zenMode.restore": true,
     "update.enableWindowsBackgroundUpdates": true,
     "terminal.integrated.copyOnSelection": true,
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    // "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "terminal.integrated.shell.windows": "C:\\Program Files (x86)\\Git\\bin\\bash.exe",
     "window.zoomLevel": -1
 }
