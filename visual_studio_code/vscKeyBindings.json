@@ -143,5 +143,9 @@
     {
         "key": "ctrl+alt+m",
         "command": "git.commit"
+    },
+    {
+        "key": "ctrl+k ctrl+k",
+        "command": "editor.action.deleteLines"
     }
 ]
