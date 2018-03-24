@@ -1,3 +1,15 @@
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
+(package-initialize)
+
 (deftheme assemblyDruid
   "")
 
@@ -61,3 +73,25 @@
  '(default ((t (:inherit nil :stipple nil :background "gray15" :foreground "gray95" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "outline" :family "Hack")))))
 
 (provide-theme 'assemblyDruid)
+
+(custom-set-variables
+ '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (go-autocomplete go-complete go-direx go-dlv go-eldoc go-errcheck go-fill-struct go-gen-test go-gopath go-guru go-impl go-imports go-mode subatomic-theme color-theme-solarized cargo)))
+ '(ring-bell-function (quote ignore))
+ '(tool-bar-mode nil))
+(custom-set-faces
+ )
+
+
+;;
+;;
+;; Go Indent
+;;
+;;
+(add-hook 'go-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'gofmt-before-save)
+            (setq tab-width 4)
+            (setq indent-tabs-mode 1)))
