@@ -1,17 +1,5 @@
-(require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
-
 (deftheme assemblyDruid
-  "")
+  "Created 2018-07-01.")
 
 (custom-theme-set-faces
  'assemblyDruid
@@ -28,16 +16,16 @@
  '(font-lock-builtin-face ((t (:background "gray15" :foreground "medium purple"))))
  '(font-lock-comment-delimiter-face ((t (:background "gray15" :foreground "DarkSlateGray4"))))
  '(font-lock-comment-face ((t (:background "gray15" :foreground "DarkSlateGray4"))))
- '(font-lock-constant-face ((t (:foreground "gray95" :weight bold :italic t))))
+ '(font-lock-constant-face ((t (:foreground "gray95"))))
  '(font-lock-doc-face ((t (:foreground "gray95" :italic t))))
  '(font-lock-function-name-face ((t (:foreground "gray95"))))
- '(font-lock-keyword-face ((t (:foreground "gray95" :weight bold))))
+ '(font-lock-keyword-face ((t (:foreground "gray95"))))
  '(font-lock-negation-char-face ((t (:foreground "gray95" :weight bold))))
  '(font-lock-preprocessor-face ((t (:background "gray15" :foreground "medium purple"))))
  '(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
  '(font-lock-regexp-grouping-construct ((t (:inherit (bold)))))
- '(font-lock-string-face ((t (:foreground "gray95"))))
- '(font-lock-type-face ((t (:foreground "gray95" :weight bold))))
+ '(font-lock-string-face ((t (:foreground "olive drab"))))
+ '(font-lock-type-face ((t (:foreground "#f9b529" :weight normal))))
  '(font-lock-variable-name-face ((t (:foreground "gray95"))))
  '(font-lock-warning-face ((t (:inherit error :background "gray15"))))
  '(button ((t (:inherit (link)))))
@@ -53,11 +41,11 @@
  '(mode-line-inactive ((t (:background "gray15" :foreground "#696e92" :box (:line-width 1 :color "gray0")))))
  '(isearch ((t (:box (:line-width 1 :color "DarkSlateGray4" :style nil) :foreground "DarkSlateGray4" :background "gray15"))))
  '(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1")) (((class color) (min-colors 88) (background dark)) (:background "red4")) (((class color) (min-colors 16)) (:background "red")) (((class color) (min-colors 8)) (:background "red")) (((class color grayscale)) (:foreground "grey")) (t (:inverse-video t))))
- '(lazy-highlight ((t (:background "gray15" :foreground "#f9b529" :bold t))))
+ '(lazy-highlight ((t (:background "gray15" :foreground "#f9b529" :weight bold))))
  '(match ((t (:box (:line-width 1 :color "DarkSlateGray4" :style nil) :foreground "DarkSlateGray4" :background "gray15"))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:box (:line-width 1 :color "DarkSlateGray4" :style nil) :foreground "DarkSlateGray4" :background "gray15"))))
- '(vertical-border ((t (:foreground "#2a2c3e"))))
+ '(vertical-border ((t (:foreground "#f9b529"))))
  '(diff-file-header ((t (:background "gray15" :foreground "gray95" :weight bold))))
  '(diff-header ((t (:inherit default :foreground "gray95"))))
  '(diff-indicator-changed ((t (:foreground "gray95" :weight bold))))
@@ -73,25 +61,3 @@
  '(default ((t (:inherit nil :stipple nil :background "gray15" :foreground "gray95" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "outline" :family "Hack")))))
 
 (provide-theme 'assemblyDruid)
-
-(custom-set-variables
- '(menu-bar-mode nil)
- '(package-selected-packages
-   (quote
-    (go-autocomplete go-complete go-direx go-dlv go-eldoc go-errcheck go-fill-struct go-gen-test go-gopath go-guru go-impl go-imports go-mode subatomic-theme color-theme-solarized cargo)))
- '(ring-bell-function (quote ignore))
- '(tool-bar-mode nil))
-(custom-set-faces
- )
-
-
-;;
-;;
-;; Go Indent
-;;
-;;
-(add-hook 'go-mode-hook
-          (lambda ()
-            (add-hook 'before-save-hook 'gofmt-before-save)
-            (setq tab-width 4)
-            (setq indent-tabs-mode 1)))
