@@ -8,7 +8,7 @@
  'assemblyDruid
  '(cursor ((t (:background "DarkSlateGray4"))))
  '(fixed-pitch ((t (:family "Hack"))))
- '(variable-pitch ((t (:family "Hack"))))
+ '(variable-pitch ((t (:family "Liberation Mono"))))
  '(escape-glyph ((t (:foreground "DarkSlateGray4"))))
  '(minibuffer-prompt ((t (:background "gray15" :foreground "DarkSlateGray4" :box nil :family "Hack"))))
  '(highlight ((t (:background "gray95" :foreground "gray15"))))
