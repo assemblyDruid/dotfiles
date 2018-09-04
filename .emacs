@@ -108,3 +108,11 @@
 (setq auto-window-vscroll nil)
 (setq line-move-visual nil)
 (setq gc-cons-threshold 100000000)
+
+;;
+;;
+;; Fonts/Faces
+;;
+;;
+(set-frame-font "Liberation Mono" nil t)
+(set-default-font "Liberation Mono")
