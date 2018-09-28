@@ -2,18 +2,24 @@
 
 ;;
 ;;
-;; Show 'buffer-menu in current window
-;; (rebinding)
-;;
+;; Buffers
+;; 
 ;;
 (global-set-key "\C-x\C-b" 'buffer-menu)
+(defun switch-to-minibuffer-window ()
+  "switch to minibuffer window (if active)"
+  (interactive)
+  (when (active-minibuffer-window)
+    (select-frame-set-input-focus (window-frame (active-minibuffer-window)))
+    (select-window (active-minibuffer-window))))
+(global-set-key (kbd "C-x C-.") 'switch-to-minibuffer-window)
 
 ;;
 ;;
 ;; C/C++ Indent
 ;;
 ;;
-(setq-default c-indent-tabs-mode t     ; Pressing TAB should cause indentation
+(setq-default c-indent-tabs-mode nil   ; Pressing TAB should cause indentation
 	      c-indent-level 4         ; A TAB is equivilent to four spaces
 	      c-argdecl-indent 0       ; Do not indent argument decl's extra
 	      c-tab-always-indent t
@@ -67,7 +73,7 @@
  '(custom-enabled-themes (quote (eziam-light)))
  '(custom-safe-themes
    (quote
-    ("44247f2a14c661d96d2bff302f1dbf37ebe7616935e4682102b68c0b6cc80095" "242527ce24b140d304381952aa7a081179a9848d734446d913ca8ef0af3cef21" "9fcac3986e3550baac55dc6175195a4c7537e8aa082043dcbe3f93f548a3a1e0" default)))
+    ("db0d4caa5e824f1a3bdce571bf11b1b38a1af169b3f2889d022d7d8407324440" "44247f2a14c661d96d2bff302f1dbf37ebe7616935e4682102b68c0b6cc80095" "242527ce24b140d304381952aa7a081179a9848d734446d913ca8ef0af3cef21" "9fcac3986e3550baac55dc6175195a4c7537e8aa082043dcbe3f93f548a3a1e0" default)))
  '(fci-rule-color "#444444")
  '(package-selected-packages
    (quote
@@ -116,3 +122,26 @@
 ;;
 (set-frame-font "Liberation Mono" nil t)
 (set-default-font "Liberation Mono")
+
+;;
+;;
+;; Global indentation
+;;
+;;
+(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
+
+;;
+;;
+;; Org-Mode
+;;
+;;
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cc" `org-capture)
+(setq org-default-notes-file "~/org/exocortex.org")
+(setq org-log-done t)
+(setq org-capture-templates
+  '(("t" "Todo" entry (file+headline "~/org/exocortex.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")))
