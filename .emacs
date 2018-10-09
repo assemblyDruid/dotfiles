@@ -3,7 +3,7 @@
 ;;
 ;;
 ;; Buffers
-;; 
+;;
 ;;
 (global-set-key "\C-x\C-b" 'buffer-menu)
 (defun switch-to-minibuffer-window ()
@@ -13,6 +13,7 @@
     (select-frame-set-input-focus (window-frame (active-minibuffer-window)))
     (select-window (active-minibuffer-window))))
 (global-set-key (kbd "C-x C-.") 'switch-to-minibuffer-window)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;
 ;;
@@ -143,5 +144,5 @@
 (setq org-default-notes-file "~/org/exocortex.org")
 (setq org-log-done t)
 (setq org-capture-templates
-  '(("t" "Todo" entry (file+headline "~/org/exocortex.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/org/exocortex.org" "Tasks")
          "* TODO %?\n  %i\n  %a")))
