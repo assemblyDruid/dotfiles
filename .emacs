@@ -14,6 +14,7 @@
     (select-window (active-minibuffer-window))))
 (global-set-key (kbd "C-x C-.") 'switch-to-minibuffer-window)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(global-auto-revert-mode t) ;; update buffers after disk changes
 
 ;;
 ;;
