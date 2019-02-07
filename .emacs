@@ -5,14 +5,6 @@
 ;; Buffers
 ;;
 ;;
-(global-set-key "\C-x\C-b" 'buffer-menu)
-(defun switch-to-minibuffer-window ()
-  "switch to minibuffer window (if active)"
-  (interactive)
-  (when (active-minibuffer-window)
-    (select-frame-set-input-focus (window-frame (active-minibuffer-window)))
-    (select-window (active-minibuffer-window))))
-(global-set-key (kbd "C-x C-.") 'switch-to-minibuffer-window)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (global-auto-revert-mode t) ;; update buffers after disk changes
 
@@ -127,11 +119,46 @@
 
 ;;
 ;;
+;; Dired
+;;
+;;
+(setq dired-listing-switches "-laGh1v --group-directories-first")
+(setq dired-recursive-copies 'always)
+(setq dired-recursive-deletes 'always)
+
+;;
+;;
 ;; Global indentation
 ;;
 ;;
 (setq indent-tabs-mode nil)
 (setq-default indent-tabs-mode nil)
+
+;;
+;;
+;; Ibuffer
+;;
+;;
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x g") 'ibuffer-do-sort-by-filename/process)
+(autoload 'ibuffer "ibuffer" "List buffers." t)
+
+(setq ibuffer-saved-filter-groups
+      (quote (("default"
+               ("Dired" (mode . dired-mode))
+               ("Emacs" (or
+                         (name . ".emacs")
+                         (name . "*GNU Emacs*")
+                         (name . "*Completions*")
+                         (name . "^\\*scratch\\*$")
+                         (name . "^\\*Messages\\*$")))
+               ("C/C++" (or
+                         (mode . c-mode)
+                         (mode . c++-mode)))))))
+
+(add-hook 'ibuffer-mode-hook
+          (lambda ()
+            (ibuffer-switch-to-saved-filter-groups "default")))
 
 ;;
 ;;
