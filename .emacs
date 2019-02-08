@@ -152,16 +152,7 @@
                          (name . "*Completions*")
                          (name . "^\\*scratch\\*$")
                          (name . "^\\*Messages\\*$")))
-               ("Assembler" (or
-                             (mode . Assembler)
-                             (mode . nasm-mode)
-                             (mode . masm-mode)
-                             (mode . asm-mode)
-                             (mode . AsmMode)
-                             (mode . Adm86Mode)
-                             (mode . GasMode)
-                             (mode . MixalMode)
-                             (mode . PicAsmMode)))
+               ("Assembler" (mode . asm-mode))
                ("Shell" (or
                          (mode . sh-mode)))
                ("C/C++" (or
