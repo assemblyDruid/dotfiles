@@ -152,6 +152,18 @@
                          (name . "*Completions*")
                          (name . "^\\*scratch\\*$")
                          (name . "^\\*Messages\\*$")))
+               ("Assembler" (or
+                             (mode . Assembler)
+                             (mode . nasm-mode)
+                             (mode . masm-mode)
+                             (mode . asm-mode)
+                             (mode . AsmMode)
+                             (mode . Adm86Mode)
+                             (mode . GasMode)
+                             (mode . MixalMode)
+                             (mode . PicAsmMode)))
+               ("Shell" (or
+                         (mode . sh-mode)))
                ("C/C++" (or
                          (mode . c-mode)
                          (mode . c++-mode)))))))
@@ -159,6 +171,16 @@
 (add-hook 'ibuffer-mode-hook
           (lambda ()
             (ibuffer-switch-to-saved-filter-groups "default")))
+
+(add-hook 'ibuffer-mode-hook
+          '(lambda ()
+             (ibuffer-auto-mode 1)
+             (ibuffer-switch-to-saved-filter-groups "default")))
+
+(setq ibuffer-expert t)
+(setq ibuffer-show-empty-filter-groups nil)
+
+
 
 ;;
 ;;
