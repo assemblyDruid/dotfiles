@@ -187,3 +187,11 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/org/exocortex.org" "Tasks")
          "* TODO %?\n  %i\n  %a")))
+
+;;
+;;
+;; Compilation
+;;
+;;
+(global-set-key (kbd "C-x p") 'compile)
+(setq compilation-ask-about-save nil)
