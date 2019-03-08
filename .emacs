@@ -50,13 +50,21 @@
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
+  (when no-ssl
+    (warn "\
+Your version of Emacs does not support SSL connections,
+which is unsafe because it allows man-in-the-middle attacks.
+There are two things you can do about this warning:
+1. Install an Emacs version that does support SSL and be safe.
+2. Remove this warning from your init file so you won't see it again."))
   ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
   (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
   ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
   (when (< emacs-major-version 24)
     ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
+    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -64,22 +72,16 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#666666" "#FFFFFF" "#EEEEEE" "#ffffff" "#ffffff" "#FFFFFF" "#ffffff" "#ffffff"])
- '(custom-enabled-themes (quote (eziam-light)))
+ '(custom-enabled-themes (quote (tao-yin)))
  '(custom-safe-themes
    (quote
-    ("db0d4caa5e824f1a3bdce571bf11b1b38a1af169b3f2889d022d7d8407324440" "44247f2a14c661d96d2bff302f1dbf37ebe7616935e4682102b68c0b6cc80095" "242527ce24b140d304381952aa7a081179a9848d734446d913ca8ef0af3cef21" "9fcac3986e3550baac55dc6175195a4c7537e8aa082043dcbe3f93f548a3a1e0" default)))
+    ("dbade2e946597b9cda3e61978b5fcc14fa3afa2d3c4391d477bdaeff8f5638c5" "801a567c87755fe65d0484cb2bded31a4c5bb24fd1fe0ed11e6c02254017acb2" "341b2570a9bbfc1817074e3fad96a7eff06a75d8e2362c76a2c348d0e0877f31" "db0d4caa5e824f1a3bdce571bf11b1b38a1af169b3f2889d022d7d8407324440" "44247f2a14c661d96d2bff302f1dbf37ebe7616935e4682102b68c0b6cc80095" "242527ce24b140d304381952aa7a081179a9848d734446d913ca8ef0af3cef21" "9fcac3986e3550baac55dc6175195a4c7537e8aa082043dcbe3f93f548a3a1e0" default)))
  '(fci-rule-color "#444444")
  '(package-selected-packages
    (quote
-    (eziam-theme subatomic-theme smart-tab smart-shift smart-semicolon smart-newline smart-cursor-color smart-comment smart-backspace rust-mode go-tag go-stacktracer go-snippets go-scratch go-projectile go-playground-cli go-playground go-imports go-impl go-gopath go-gen-test go-fill-struct go-errcheck go-dlv go-direx go-complete go-autocomplete color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-theme)))
+    (tao-yin-theme ## eziam-theme subatomic-theme smart-tab smart-shift smart-semicolon smart-newline smart-cursor-color smart-comment smart-backspace rust-mode go-tag go-stacktracer go-snippets go-scratch go-projectile go-playground-cli go-playground go-imports go-impl go-gopath go-gen-test go-fill-struct go-errcheck go-dlv go-direx go-complete go-autocomplete color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-theme)))
  '(pdf-view-midnight-colors (quote ("#ffffff" . "#444444")))
  '(vc-annotate-background "#444444"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;;
 ;;
@@ -114,8 +116,8 @@
 ;; Fonts/Faces
 ;;
 ;;
-(set-frame-font "Liberation Mono" nil t)
-(set-default-font "Liberation Mono")
+(set-frame-font "Consolas" nil t)
+(set-default-font "Consolas")
 
 ;;
 ;;
@@ -154,7 +156,11 @@
                          (name . "^\\*Messages\\*$")))
                ("Assembler" (mode . asm-mode))
                ("Shell" (or
-                         (mode . sh-mode)))
+                         (mode . sh-mode)
+                         (mode . shell-mode)
+                         (mode . eshell-mode)))
+               ("Ruby" (or
+                        (mode . ruby-mode)))
                ("C/C++" (or
                          (mode . c-mode)
                          (mode . c++-mode)))))))
@@ -195,3 +201,9 @@
 ;;
 (global-set-key (kbd "C-x p") 'compile)
 (setq compilation-ask-about-save nil)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
