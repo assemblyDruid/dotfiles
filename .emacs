@@ -46,24 +46,24 @@
 ;; MELPA
 ;;
 ;;
-(require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  (when no-ssl
-    (warn "\
-Your version of Emacs does not support SSL connections,
-which is unsafe because it allows man-in-the-middle attacks.
-There are two things you can do about this warning:
-1. Install an Emacs version that does support SSL and be safe.
-2. Remove this warning from your init file so you won't see it again."))
-  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
+;; (require 'package)
+;; (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+;;                     (not (gnutls-available-p))))
+;;        (proto (if no-ssl "http" "https")))
+;;   (when no-ssl
+;;     (warn "\
+;; Your version of Emacs does not support SSL connections,
+;; which is unsafe because it allows man-in-the-middle attacks.
+;; There are two things you can do about this warning:
+;; 1. Install an Emacs version that does support SSL and be safe.
+;; 2. Remove this warning from your init file so you won't see it again."))
+;;   ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+;;   (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+;;   ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+;;   (when (< emacs-major-version 24)
+;;     ;; For important compatibility libraries like cl-lib
+;;     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
+;; (package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -79,7 +79,7 @@ There are two things you can do about this warning:
  '(fci-rule-color "#444444")
  '(package-selected-packages
    (quote
-    (tao-yin-theme ## eziam-theme subatomic-theme smart-tab smart-shift smart-semicolon smart-newline smart-cursor-color smart-comment smart-backspace rust-mode go-tag go-stacktracer go-snippets go-scratch go-projectile go-playground-cli go-playground go-imports go-impl go-gopath go-gen-test go-fill-struct go-errcheck go-dlv go-direx go-complete go-autocomplete color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-theme)))
+    (tao-theme tao-yin-theme ## eziam-theme subatomic-theme smart-tab smart-shift smart-semicolon smart-newline smart-cursor-color smart-comment smart-backspace rust-mode go-tag go-stacktracer go-snippets go-scratch go-projectile go-playground-cli go-playground go-imports go-impl go-gopath go-gen-test go-fill-struct go-errcheck go-dlv go-direx go-complete go-autocomplete color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-theme)))
  '(pdf-view-midnight-colors (quote ("#ffffff" . "#444444")))
  '(vc-annotate-background "#444444"))
 
@@ -95,12 +95,12 @@ There are two things you can do about this warning:
 
 ;;
 ;;
-;; No bells/alarms
+;; No bells/alarms/splash
 ;;
 ;;
 (setq visible-bell 1)
 (setq ring-bell-function 'ignore)
-
+(setq inhibit-splash-screen t)
 
 ;;
 ;;
