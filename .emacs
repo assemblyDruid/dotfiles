@@ -72,3 +72,7 @@
              (ibuffer-auto-mode 1)
              (ibuffer-switch-to-saved-filter-groups "default")))
 (setq ibuffer-show-empty-filter-groups nil)
+
+;; Compilation
+(global-set-key (kbd "C-x p") 'compile)
+(setq compilation-ask-about-save nil)
