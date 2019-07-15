@@ -8,10 +8,10 @@
 
 ;; C/C++ Indent
 (setq-default c-indent-tabs-mode nil   ; Pressing TAB should cause indentation
-                    c-indent-level 4         ; A TAB is equivilent to four spaces
-                          c-argdecl-indent 0       ; Do not indent argument decl's extra
-                                c-tab-always-indent t
-                                      backward-delete-function nil) ; DO NOT expand tabs when deleting
+              c-indent-level 4         ; A TAB is equivilent to four spaces
+              c-argdecl-indent 0       ; Do not indent argument decl's extra
+              c-tab-always-indent t
+              backward-delete-function nil) ; DO NOT expand tabs when deleting
 (c-add-style "my-c-style" '((c-continued-statement-offset 4))) ; If a statement continues on the next line, indent the continuation by 4
 (defun my-c-mode-hook ()
   (c-set-style "my-c-style")
