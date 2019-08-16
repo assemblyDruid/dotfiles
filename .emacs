@@ -17,6 +17,9 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (kill-buffer "*Messages*")
+(setq auto-window-vscroll nil)
+(setq line-move-visual nil)
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; No completions Buffer
 (add-hook 'minibuffer-exit-hook
