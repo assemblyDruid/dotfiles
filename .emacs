@@ -15,15 +15,13 @@
 	      c-tab-always-indent t
 	      backward-delete-function nil)
 (defun assemblyDruid-c-mode ()
-  (c-basic-offset 4)
-  (c-continued-statement-offset 0) ;; Note: was previously 4
-  (c-set-offset 'substatement-open '0)
-  (c-set-offset 'topmost-intro '+)
-  (c-set-offset 'defun-block-intro' '++)
-  (c-set-offset 'inline-open '-)
-  (c-set-offset 'block-open '+)
   (c-set-offset 'brace-list-open '0)
-  (c-set-offset 'case-label '+))
+  (c-set-offset 'substatement-open '0)
+  (c-set-offset 'topmost-intro '0)
+  (c-set-offset 'defun-block-intro '+)
+  (c-set-offset 'inline-open '0)
+  (c-set-offset 'block-open '0)
+  (c-set-offset 'case-label '0))
 (add-hook 'c-mode-hook 'assemblyDruid-c-mode)
 (add-hook 'c++-mode-hook 'assemblyDruid-c-mode)
 
