@@ -55,7 +55,7 @@
 (global-set-key (kbd "C-x p") 'compile)
 (setq compilation-ask-about-save nil)
 
-(set-default-font "Liberation Mono")
+(set-default-font "Liberation Mono 10")
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (global-auto-revert-mode t)
 (menu-bar-mode -1)
@@ -75,11 +75,21 @@
 (setq auto-window-vscroll nil)
 (setq line-move-visual nil)
 (fset 'yes-or-no-p 'y-or-n-p)
-(kill-buffer "*Messages*")
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (assemblyDruid)))
  '(custom-safe-themes
    (quote
-    ("dab3b70c98fc53c36a7d7add56fe5bd8bd4a7b19caf8bef1fba586fb3b76c137" default))))
-(custom-set-faces)
+    ("835b5eb6b409e289ee7ae0f33d9b9c81f123d1512bd3aaeada000017ca7cec06" "dab3b70c98fc53c36a7d7add56fe5bd8bd4a7b19caf8bef1fba586fb3b76c137" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(kill-buffer "*Messages*")
