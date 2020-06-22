@@ -25,12 +25,16 @@
   (c-set-offset 'case-label '0))
 (add-hook 'c-mode-hook 'assemblyDruid-c-mode)
 (add-hook 'c++-mode-hook 'assemblyDruid-c-mode)
-(add-to-list 'auto-mode-alist '("\\.hlsl\\'" . c-mode))
-(add-to-list 'auto-mode-alist '("\\.glsl\\'" . c-mode))
-(add-to-list 'auto-mode-alist '("\\.vert\\'" . c-mode))
-(add-to-list 'auto-mode-alist '("\\.vrt\\'" .  c-mode))
-(add-to-list 'auto-mode-alist '("\\.frag\\'" . c-mode))
-(add-to-list 'auto-mode-alist '("\\.frg\\'" .  c-mode))
+
+;; Glsl Mode
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(load "glsl-mode")
+(add-to-list 'auto-mode-alist '("\\.hlsl\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.glsl\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.vert\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.vrt\\'" .  glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.frag\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.frg\\'" .  glsl-mode))
 
 ;; Ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -43,13 +47,7 @@
                ("C/C++" (or
                          (mode . c-mode)
                          (mode . c++-mode)))
-               ("Shaders" (or
-                           (name . ".hlsl")
-                           (name . ".glsl")
-                           (name . ".frag")
-                           (name . ".frg")
-                           (name . ".vert")
-                           (name . ".vrt")))
+               ("Shaders" (mode . glsl-mode))
                ("Assembler" (mode . asm-mode))
                ("Dired" (mode . dired-mode))
                ("Emacs" (or
