@@ -22,8 +22,8 @@
   (c-set-offset 'defun-block-intro '+)
   (c-set-offset 'inline-open '0)
   (c-set-offset 'block-open '0)
-  (c-set-offset 'case-label '0))
-(add-hook 'c-mode-hook 'assemblyDruid-c-mode)
+  (c-set-offset 'case-label '+))
+(add-hook 'c-mode-hook   'assemblyDruid-c-mode)
 (add-hook 'c++-mode-hook 'assemblyDruid-c-mode)
 
 ;; Glsl Mode
@@ -88,5 +88,8 @@
 (setq auto-window-vscroll nil)
 (setq line-move-visual nil)
 (fset 'yes-or-no-p 'y-or-n-p)
+(setq
+   split-width-threshold 0
+   split-height-threshold nil)
 
 (kill-buffer "*Messages*")
